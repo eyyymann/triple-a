@@ -99,7 +99,7 @@ const Form: React.FC<FormProps> = (
               <Button 
                   disabled={isLoading || !body} 
                   onClick={onSubmit} 
-                  label="Tweet"
+                  label={formLabel ? formLabel : "Shout"}
               />
               </div>
             }
@@ -114,7 +114,7 @@ const Form: React.FC<FormProps> = (
               <Button 
                   disabled={isLoading || !body} 
                   onClick={onSubmit} 
-                  label={formLabel ? formLabel : "Tweet"}
+                  label={formLabel ? formLabel : "Shout"}
               />
               </div>
             }

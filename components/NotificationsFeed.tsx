@@ -5,6 +5,7 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import { useEffect } from "react";
 import { BiSolidUser, BiUser } from "react-icons/bi";
 import { AiFillHeart, AiFillMessage, AiOutlineMessage, AiOutlineUser } from "react-icons/ai";
+import NotificationsItem from "./NotificationsItem";
 
 const NotificationsFeed = () => {
   const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser();
@@ -25,37 +26,7 @@ const NotificationsFeed = () => {
   return ( 
     <div className="flex flex-col">
       {fetchedNotifications.map((notification: Record<string, any>) => (
-        <div key={notification.id} 
-            className="
-                flex flex-row 
-                items-center 
-                p-6 gap-4 
-                border-b-[1px] border-neutral-800
-                hover:bg-sky-900
-                hover:bg-opacity-25
-                transition
-                cursor-default"
-        >
-          {
-            notification.body.includes("followed") 
-            && 
-            <AiOutlineUser color="white" size={32} /> 
-          }
-          {
-            notification.body.includes("liked") 
-            && 
-            <AiFillHeart color="white" size={32} /> 
-          }
-          {
-            notification.body.includes("replied") 
-            && 
-            <AiOutlineMessage color="white" size={32} /> 
-          }
-        
-          <p className="text-neutral-200 font-semibold">
-            {notification.body}
-          </p>
-        </div>
+        <NotificationsItem data={notification} />
         ))}
     </div>
    );
