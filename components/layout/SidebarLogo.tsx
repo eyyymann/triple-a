@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { BsTwitter } from "react-icons/bs";
+import { BiAt } from "react-icons/bi";
+import { BsSpeaker, BsSpeakerFill, BsTwitter, BsYelp } from "react-icons/bs";
 
 const SidebarLogo = () => {
     const router = useRouter();
@@ -19,7 +20,7 @@ const SidebarLogo = () => {
                 cursor-pointer
                 transition
         ">
-            <BsTwitter 
+            <BiAt
                 size={28}
                 color="white"
             />
